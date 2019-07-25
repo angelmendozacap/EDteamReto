@@ -16,16 +16,17 @@ func displayMenu() {
 }
 
 // setUpData receives the entries for a Photo struct
-func setUpPhotoStruct(p *Photo) {
+func setUpPhotoStruct() (p Photo) {
 	fmt.Printf("Ingrese el ID del álbum -> ")
-	fmt.Scanln(p.AlbumID)
+	fmt.Scanln(&p.AlbumID)
 
 	fmt.Printf("Ingrese el título de la foto -> ")
-	fmt.Scanln(p.Title)
+	fmt.Scanln(&p.Title)
 
 	fmt.Printf("Ingrese la dirección URL de la foto -> ")
-	fmt.Scanln(p.URL)
+	fmt.Scanln(&p.URL)
 
 	fmt.Printf("Ingrese el dirección URL de la miniatura de la foto -> ")
-	fmt.Scanln(p.ThumbnailURL)
+	fmt.Scanln(&p.ThumbnailURL)
+	return
 }

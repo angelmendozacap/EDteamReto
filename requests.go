@@ -18,7 +18,7 @@ func SendRequest(method, URL string, body interface{}) (data []byte) {
 	}
 
 	req, err := http.NewRequest(method, URL, bytes.NewBuffer(requestBody))
-	if method != http.MethodDelete {
+	if method == http.MethodPut || method == http.MethodPost {
 		req.Header.Set("Content-Type", "application/json")
 	}
 

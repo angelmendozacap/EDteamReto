@@ -42,9 +42,7 @@ func GetPhotoByID() {
 
 // CreatePhoto creates a new photo
 func CreatePhoto() {
-	photo := Photo{}
-
-	setUpPhotoStruct(&photo)
+	photo := setUpPhotoStruct()
 
 	data := SendRequest("POST", baseURL, photo)
 	fmt.Println(string(data))
@@ -52,7 +50,6 @@ func CreatePhoto() {
 
 // UpdatePhoto updates a photo by ID
 func UpdatePhoto() {
-	photo := Photo{}
 	var idPhoto uint
 
 	fmt.Printf("Ingrese el ID de la foto -> ")
@@ -60,8 +57,8 @@ func UpdatePhoto() {
 
 	URL := fmt.Sprintf("%s/%v", baseURL, idPhoto)
 
-	setUpPhotoStruct(&photo)
-
+	photo := setUpPhotoStruct()
+	fmt.Println(photo)
 	data := SendRequest("PUT", URL, photo)
 	fmt.Println(string(data))
 }
