@@ -8,3 +8,5 @@ type Photo struct {
 	URL          string `json:"url"`
 	ThumbnailURL string `json:"thumbnailUrl"`
 }
+
+type photosStore []Photo

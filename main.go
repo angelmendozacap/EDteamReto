@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
 
 	var opt uint8
-
-	displayMenu()
-
 	for {
-		fmt.Printf("\n\tElija una opción -> ")
+		fmt.Println("_______________________________________________________________________________")
+		displayMenu()
+		fmt.Printf("\t*\n\t*Elija una opción -> ")
 		fmt.Scanln(&opt)
 
 		switch opt {
@@ -26,8 +26,9 @@ func main() {
 		case 5:
 			DeletePhoto()
 		default:
-			fmt.Println("Esa opción no esta disponible")
+			fmt.Println("| -_- ESA OPCIÓN NO ESTÁ DISPONIBLE -_- |")
 			break
 		}
+		time.Sleep(time.Second * 4)
 	}
 }
